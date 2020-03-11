@@ -1,17 +1,25 @@
 class MoviesAdapter{
-    constructor(baseURL){
-      this.baseURL = baseURL
+    constructor(){
+      this.baseURL = "http://localhost:3000/movies"
     }
 
-    fetchMovies(){
-        fetch(this.baseURL)
-          .then(res => res.json())
-          .then(resObj => {
-            resObj.data.forEach(movieObj => {
-              let sanitized = {...movieObj.attributes, id: movieObj.id} //why use the spread operator 
-              new Movie(sanitized) //creating movie 
-            })
-          })
-          .then(() => console.log(Movie.all))
-      }
+    getMovies(){
+      return fetch(this.baseURL).then(res => res.json())
     }
+
+    postMovie(value){
+      const newMovie = {
+        title: value,  // creating new movie object, where the title is equal to value submitted in form 
+      };
+      // debugger
+
+      return fetch(this.baseURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({newMovie})// creating new movie object {movie: movie} - property and value 
+      }).then(res => res.json()) //this sends parsed json object to makeMovie(event) in movie.js
+      
+    }
+  }
