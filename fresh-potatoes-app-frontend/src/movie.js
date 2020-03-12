@@ -4,4 +4,8 @@ class Movie {
       this.id = movieJSON.id
     }
 
+    renderLi(){
+      return `<li>${this.title}</li>`
+    }
+
 }

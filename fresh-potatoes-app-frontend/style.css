@@ -27,7 +27,13 @@
     /* .center {
        text-align: center; list-style-position:inside;
       } */
-      
+    
+    .editable {
+      border: 1px solid green;
+      padding: 20px;
+      width: 15%
+    }
+
     h1 {
         color:  red;
       }
