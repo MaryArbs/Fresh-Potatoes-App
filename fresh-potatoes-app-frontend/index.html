@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
  <head>
    <meta charset="UTF-8">
@@ -10,28 +9,28 @@
 </head>
  <body>
    <div class = "container" >
-    <h1 style='text-align:center'>Fresh Potatoes App</h1>
+    <h1 style='text-align:center'>Fresh Potatoes</h1>
     <div id = "new-movie-container">
         <form style='text-align:center' id ="new-movie-form">
-            <input type = "text" name = "movie-title" id = "new-movie-title">
-            <input type = "submit" value = "Add Movie">
+            <label for="movie-title">Title:</label>
+            <input type = "text" name = "new-movie-title" id= "new-movie-title"><br>
+            <label for="image-link">Image Link:</label> 
+            <input type="text" name="image-link" id="image-link"><br>
+            <input type = "submit" value = "Add Movie" id="add-movie">
         </form>
     </div> 
-    <div id = "movie-content">
-        <ol id = "movies-container"></div>
+    <div id = "main">
+      <ol id = "movies-container"></div>
         
-        </ol>
-    <div id = "movie-show">
+      </ol>
 
-    </div>
    </div>
  </div>
 </div>
 
-    
 
     
-   
+
   
 
 <script type="text/javascript" src="src/movies.js"></script>
