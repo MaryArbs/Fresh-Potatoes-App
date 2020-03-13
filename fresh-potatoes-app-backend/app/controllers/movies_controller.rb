@@ -9,9 +9,8 @@ class MoviesController < ApplicationController
     movie = Movie.create(movie_params)
     render json: MovieSerializer.new(movie)
   end
-  
+
   def update
-    # byebug
     movie = Movie.find_by(id: params[:id])
     movie.update(movie_params)
     render json: MovieSerializer.new(movie)

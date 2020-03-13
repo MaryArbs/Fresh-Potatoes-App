@@ -23,17 +23,17 @@ class MoviesAdapter{
       }).then(res => res.json()) //this sends parsed json object to addMovie(event) in movie.js
     }
 
-    // updateMovie(value, id){
-    //   const movie = {
-    //     title: value,
-    //   };
-    //   // debugger
-    //   return fetch(`${this.baseURL}/${id}`, {
-    //     method: "PATCH",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({movie})// creating new movie object {movie: movie} - property and value 
-    //   }).then(res => res.json()) //this sends parsed json object to editMovie(event) in movie.js
-    // }
+    updateMovie(value, id){
+      const movie = {
+        title: value,
+      };
+      // debugger
+      return fetch(`${this.baseURL}/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({movie})// creating new movie object {movie: movie} - property and value 
+      }).then(res => res.json()) //this sends parsed json object to editMovie(event) in movie.js
+    }
   }

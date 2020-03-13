@@ -1,14 +1,38 @@
 class Reviews {
 
+    static all = []
     constructor(){
-     this.reviews = []
+    
      this.adapter = new ReviewsAdapter()
-     this.formSubmit = document.getElementById("form-submit");
-     this.formButtons = document.getElementById("form-show-buttons");
-     this.addMovieButton = document.getElementById("add-movie");
-     this.cardContainer = document.getElementById('movie-card-container');
-     this.fetchAndLoadMovies()
+     this.fetchAndLoadReviews()
      this.bindingsAndEventListeners()
    }
 
+   bindingsAndEventListeners(){
+       this.moviesContainer = document.getElementById('movies-container')
+    // this.addReviewButton = document.getElementById('add-review')
+    // this.addReviewButton.addEventListener('click', this.addReview.bind(this))
+   }
+
+//    addReview(){
+   
+//    }
+
+   
+  fetchAndLoadReviews(){
+    this.adapter.getReviews() 
+    .then(resObj => {
+      resObj.data.forEach(reviewObj => {
+        let sanitized = {...reviewObj.attributes, id: reviewObj.id} 
+        Reviews.all.push(new Review(sanitized))
+      })
+    })
+    .then(() => {
+    //   this.fullRender()
+    })
+  }
+
+//   fullRender(){
+//     this.moviesContainer.innerHTML = this.reviews.map(review => review.renderLi()).join("")
+//     }
 }

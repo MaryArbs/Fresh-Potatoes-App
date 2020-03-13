@@ -1,14 +1,12 @@
-class Reviews {
+class ReviewsAdapter {
 
     constructor(){
-     this.reviews = []
-     this.adapter = new ReviewsAdapter()
-     this.formSubmit = document.getElementById("form-submit");
-     this.formButtons = document.getElementById("form-show-buttons");
-     this.addMovieButton = document.getElementById("add-movie");
-     this.cardContainer = document.getElementById('movie-card-container');
-     this.fetchAndLoadMovies()
-     this.bindingsAndEventListeners()
-   }
+        this.baseURL = "http://localhost:3000/reviews"
+      }
+      getReviews(){
+        return fetch(this.baseURL).then(res => res.json())
+      }
+  
+  
 
 }

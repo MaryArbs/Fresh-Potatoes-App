@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    movie = Review.create(review_params)
+    review = Review.create(review_params)
     render json: ReviewSerializer.new(review)
   end
 
