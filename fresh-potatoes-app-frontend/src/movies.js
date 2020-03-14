@@ -16,7 +16,7 @@ class Movies {
     this.movieForm.addEventListener('submit', this.addMovie.bind(this))//anytime you make form, make sure you bind 'this' to movies. if you do not do this, when you use "this" in makeForm, "this" will refere to the form, and return undefined value. You want to value, of the Notes. 
     this.moviesContainer.addEventListener('dblclick', this.handleMovieClick.bind(this))
     // this.body.addEventListener('blur', this.editMovie.bind(this), true) //add listenter to parent, any children of body will listen for blur
-    this.reviewsContainer = document.getElementById('reviews-container')
+    // this.reviewsContainer = document.getElementById('reviews-container')
   } 
 
   addMovie(event){

@@ -28,7 +28,7 @@ class Reviews {
       })
     })
     .then(() => {
-    //   this.fullRender()
+      // this.fullRender()
     })
   }
 
