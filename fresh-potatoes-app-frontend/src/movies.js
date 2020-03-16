@@ -16,7 +16,6 @@ class Movies {
     this.movieForm.addEventListener('submit', this.addMovie.bind(this))//anytime you make form, make sure you bind 'this' to movies. if you do not do this, when you use "this" in makeForm, "this" will refere to the form, and return undefined value. You want to value, of the Notes. 
     this.moviesContainer.addEventListener('dblclick', this.handleMovieClick.bind(this))
     // this.body.addEventListener('blur', this.editMovie.bind(this), true) //add listenter to parent, any children of body will listen for blur
-    // this.reviewsContainer = document.getElementById('reviews-container')
   } 
 
   addMovie(event){
@@ -25,6 +24,7 @@ class Movies {
     const imgValue = this.imageLink.value
     this.adapter.postMovie(titleValue, imgValue).then(movie => { 
       let sanitized = {...movie.data.attributes, id: movie.id}
+      // debugger
       this.movies.push(new Movie(sanitized)) //created new movie in movies_controller, and then the controller renders movie to JSON
       this.newMovieTitle.value = ''
       this.imageLink.value = ''
@@ -41,14 +41,14 @@ class Movies {
   }
 
 
-  editMovie(event){
-  const li = event.target
-  li.contentEditable = false 
-  li.classList.remove('editable')  //when you click away, edit box dissapears
-  const newValue = li.innerHTML //now adapter needs to make the update request, once value is defined
-  const id = li.dataset.id  
-  this.adapter.updateMovie(newValue, id)
-}
+//   editMovie(event){
+//   const li = event.target
+//   li.contentEditable = false 
+//   li.classList.remove('editable')  //when you click away, edit box dissapears
+//   const newValue = li.innerHTML //now adapter needs to make the update request, once value is defined
+//   const id = li.dataset.id  
+//   this.adapter.updateMovie(newValue, id)
+// }
 
   fetchAndLoadMovies(){
   this.adapter.getMovies() //fetching movies from db

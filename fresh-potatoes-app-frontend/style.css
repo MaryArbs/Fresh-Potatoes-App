@@ -1,34 +1,35 @@
+html {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
 
-    /* ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-    }
-    
-    li {
-      float: left;
-    }
-    
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    
-    li a:hover {
-      background-color: rgb(185, 14, 14);
-    } */
-    
+body {
+    background: white
+}
+
+.header {
+  padding: 10px;
+  text-align: center;
+  background:black;
+  color: white;
+  font-size: 30px;
+  border: 1px solid;
   
-    /* .center {
-       text-align: center; list-style-position:inside;
-      } */
+}
 
-      .center {
+.container{
+  text-align: center;
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  background: red;
+  color: #ffffff;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 18px black;
+  font-family: "Times New Roman", Times, serif;
+}
+  .center {
         text-align: center;
         list-style-position: inside;
       }
@@ -42,4 +43,3 @@
     h1 {
         color:  red;
       }
-   

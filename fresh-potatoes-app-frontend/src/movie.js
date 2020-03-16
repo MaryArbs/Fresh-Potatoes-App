@@ -7,23 +7,40 @@ class Movie {
     }
 
   reviews(){
+    // debugger
       return Reviews.all.filter(function(review){
-        return review.movie_id.toString() === this.id
+        return review.movie_id == this.id
       }, this)
       
   }
 
-  renderLi(){
-      return `<li data-id="${this.id}" class="movie">${this.title} </li><br>
-      <div><img src="${this.image}"> </div>
-      <div id="add-review" ><input type="button" value="Add Review" onClick:"javascript:addReview();"></div><br>
-      <ul id="movie-${this.id}"> ${this.renderReviews()}</ul>
-      `  
+  renderLi = () => {
+    // debugger
+     return `<li data-id="${this.id}" class="movie">${this.title} </li><br>
+      <div><img src="${this.image}"> </div><br>
+      <div> ${this.reviewForm()}</div>
+      <div><ul class="center" id="movie-${this.id}"> ${this.renderReviews()}</ul></div>
+
+     `  
+   }
+
+    reviewForm(){
+      return ` 
+      <form id="new-review-form">
+      <input type="text" name="new-review" id="new-review"><br>
+      <input type="submit" value="Add Review" id="add-new-review">
+      </form>
+      `
     }
   
-  renderReviews(){
-    return this.reviews().map(review => review.renderLi()).join("")
-     //creating one movie with  many reviews
+    reviewEvent() {
+    this.newReviewForm = document.getElementById('new-review-form')
+    this.newReviewForm.addEventListener('submit', Reviews.addReview())
+    }
+ 
+   renderReviews = () => {
+    return this.reviews().map(review => review.renderLi()).join("") //this is returning is empty string!!!
+    //creating one movie with  many reviews
    }
 
 }

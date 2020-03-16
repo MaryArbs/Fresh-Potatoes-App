@@ -6,14 +6,12 @@ class Review {
       
     }
 
-
     movies(){
       return Movies.all.find(movie => movie.id === this.movie_id)
     }
     
     renderLi(){
-      return `<li>${this.comment} </li><br>
-    
-      `  
-    }
+      return `<li>${this.comment}</li>`
+      
+   }
 }

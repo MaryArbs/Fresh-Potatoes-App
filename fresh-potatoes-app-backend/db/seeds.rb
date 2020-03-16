@@ -9,7 +9,7 @@ Movie.create([{title: 'Onward', image: "https://m.media-amazon.com/images/M/MV5B
 
 
 
-Review.create([{comment: "Great Movie", movie_id: "199"}, {comment: "This was the best movie!", movie_id: "200"}])
+Review.create([{comment: "Great Movie", movie_id: "211"}, {comment: "This was the best movie!", movie_id: "212"}])
 
 
 

@@ -1,36 +1,35 @@
 class Reviews {
 
-    static all = []
-    constructor(){
-    
-     this.adapter = new ReviewsAdapter()
-     this.fetchAndLoadReviews()
-     this.bindingsAndEventListeners()
-   }
+  static all = []
+  constructor(){
+  
+   this.adapter = new ReviewsAdapter()
+   this.fetchAndLoadReviews()
+ }
 
-   bindingsAndEventListeners(){
-       this.moviesContainer = document.getElementById('movies-container')
-    // this.addReviewButton = document.getElementById('add-review')
-    // this.addReviewButton.addEventListener('click', this.addReview.bind(this))
-   }
+  //  static addReview(event){
+  //   event.preventDefault() 
+  //   this.newReviewInput = document.getElementById('new-review')
+  //   this.movieID = document.getElementById
+  //   const reviewValue = this.newReviewInput.value 
+  //   const movieValue = 
+  // }
 
-//    addReview(){
-   
-//    }
-
-   
-  fetchAndLoadReviews(){
-    this.adapter.getReviews() 
-    .then(resObj => {
-      resObj.data.forEach(reviewObj => {
-        let sanitized = {...reviewObj.attributes, id: reviewObj.id} 
-        Reviews.all.push(new Review(sanitized))
-      })
+ 
+fetchAndLoadReviews(){
+  this.adapter.getReviews() 
+  .then(resObj => {
+   resObj.data.forEach(reviewObj => {
+      let sanitized = {...reviewObj.attributes, id: reviewObj.id} 
+      Reviews.all.push(new Review(sanitized))
+      // debugger
     })
-    .then(() => {
-      // this.fullRender()
-    })
-  }
+  })
+  .catch(error => console.log(error.message))
+  // .then(() => {
+  //   // this.fullRender()
+  // })
+}
 
 //   fullRender(){
 //     this.moviesContainer.innerHTML = this.reviews.map(review => review.renderLi()).join("")
