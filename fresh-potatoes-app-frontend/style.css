@@ -19,23 +19,45 @@ body {
 
 .container{
   text-align: center;
-  width: 800px;
+  width: 1000px;
   margin-right: auto;
   margin-left: auto;
   background: red;
   color: #ffffff;
   border: 1px solid;
   padding: 10px;
-  box-shadow: 5px 10px 18px black;
+  box-shadow: 10px 15px 20px black;
   font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
 }
   .center {
         text-align: center;
         list-style-position: inside;
       }
+      
+      input[type=submit] {
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        font-size: 16px;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      /* ul {
+        border: 3px solid black;
+        box-shadow: 8px 10px 15px black;
+        width: 15%
+    } */
+
+    ul { 
+      padding:0;
+      text-align:center;
+    }
     
     .editable {
-      border: 1px solid green;
+      border: 2px solid black;
       padding: 20px;
       width: 15%
     }
