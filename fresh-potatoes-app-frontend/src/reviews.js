@@ -21,14 +21,18 @@ addReview = (event) => {
   let input = this.newReviewInput.value
   let movieId = event.target.dataset.movie
   this.adapter.postReview(input, movieId).then(review => { 
-    let sanitized = {...review.attributes, id: review.id}
-    Reviews.all.push(new Review(sanitized)) 
+    let sanitized = {...review.data.attributes, id: review.data.id}
+    let newReview = new Review(sanitized)
+    Reviews.all.push(newReview) 
     this.newReviewInput.value = ''
+    return newReview
   })
-  .then(() => {
-    this.fullRender()
-   })
+  .then((reviewObj) => {
+    const ul = document.getElementById(`movie-${reviewObj.movie_id}`)
+    ul.innerHTML += reviewObj.renderLi()
+  })
   }
+
 
 
  
@@ -43,7 +47,18 @@ fetchAndLoadReviews = () => {
   // .then(() => this.fullRender())
   }
 
-  fullRender = () => {
-    return this.moviesContainer.innerHTML =  Reviews.all.map(review => review.renderLi()).join("")
-  }
+  // renderUl(){
+  //   debugger
+  //   this.moviesContainer = document.getElementById('movies-container')
+  //   const ul = document.getElementById(`movie-${review.movie_id}`)
+  //   this.moviesContainer.innerHTML = this.reviews.map(review => review.ul.appendChild(review))
+
+  // }
+
+
+  // fullRender = () => {
+  //   debugger
+  
+  //   this.moviesContainer.innerHTML = this.reviews.map(review => review.renderUl()).join("")
+  // }
   }

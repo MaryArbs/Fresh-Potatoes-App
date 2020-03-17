@@ -13,7 +13,6 @@ class Movie {
   }
 
   renderLi = () => {
-    // debugger
      return `<li data-id="${this.id}" class="movie">${this.title} </li><br>
       <div><img src="${this.image}"> </div><br>
       <div><ul class="text-center" id="movie-${this.id}"> ${this.renderReviews()}</ul></div><br>
