@@ -28,7 +28,7 @@ $  localhost:3000
 
 Open index.html (within the frontend terminal)
 
-$ open index.html
+```$ open index.html```
 
 # Usage 
 
