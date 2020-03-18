@@ -7,24 +7,24 @@ Fresh Potatoes is an app to track and review the movies that we love.
 # Installation
 Fork and clone repo
 
-$ git clone git@github.com:MaryArbs/Fresh-Potatoes-App.git
+```$ git clone git@github.com:MaryArbs/Fresh-Potatoes-App.git```
 
 Switch to directory
 
-$ cd fresh-potatoes-app
+```$ cd fresh-potatoes-app```
 
 Split the terminal - in one terminal, switch to the frontend (cd frontend) and in the other terminal, switch to the backend (cd backend)
 
-$ cd frontend
-$ cd backend
+```$ cd frontend```
+```$ cd backend```
 
 Startup the server (within the backend terminal)
 
-$ rails s
+```$ rails s```
 
 Enter in browser to launch the rails server
 
-$  localhost:3000
+```$  localhost:3000```
 
 Open index.html (within the frontend terminal)
 
