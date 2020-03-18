@@ -9,7 +9,6 @@ class Reviews {
  bindingsAndEventListeners = () => {
   this.newReviewForm = Array.from(document.getElementsByClassName('new-review-form'))
   this.newReviewForm.forEach(el => {
-    console.log("ADDING EVENT LISTENER!");
    el.addEventListener('submit', this.addReview)
   })
 }
@@ -47,18 +46,4 @@ fetchAndLoadReviews = () => {
   // .then(() => this.fullRender())
   }
 
-  // renderUl(){
-  //   debugger
-  //   this.moviesContainer = document.getElementById('movies-container')
-  //   const ul = document.getElementById(`movie-${review.movie_id}`)
-  //   this.moviesContainer.innerHTML = this.reviews.map(review => review.ul.appendChild(review))
-
-  // }
-
-
-  // fullRender = () => {
-  //   debugger
-  
-  //   this.moviesContainer.innerHTML = this.reviews.map(review => review.renderUl()).join("")
-  // }
   }
