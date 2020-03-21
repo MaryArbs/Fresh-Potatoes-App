@@ -19,17 +19,19 @@ class Movies {
     const titleValue = this.newMovieTitle.value //pass in event object. need to take value to create post request using adapter
     const imgValue = this.imageLink.value
     this.adapter.postMovie(titleValue, imgValue).then(movie => { 
-      let sanitized = {...movie.data.attributes, id: movie.id}
+      let sanitized = {...movie.data.attributes, id: movie.data.id}
       let newMovie = new Movie(sanitized)
       this.movies.push(newMovie) //created new movie in movies_controller, and then the controller renders movie to JSON
       this.newMovieTitle.value = ''
       this.imageLink.value = ''
+      return newMovie
     })
   .then((movieObj) => {
-    const li = document.getElementById(`${movieObj.id}`)
-    li.innerHTML += movieObj.renderLi()
+    const ol = document.getElementById(`movies-container`)
+    ol.innerHTML += movieObj.renderLi()
    })
   }
+
 
   fetchAndLoadMovies = () => {
   return this.adapter.getMovies() //fetching movies from db
@@ -44,8 +46,9 @@ class Movies {
   .then(this.bindingsAndEventListeners)
   .then(() => this.fullRender())
 }
+  
   fullRender = () => {
-  this.moviesContainer.innerHTML = this.movies.map(movie => movie.renderLi()).join("")
+   this.moviesContainer.innerHTML = this.movies.map(movie => movie.renderLi()).join("")
   }
 
 }

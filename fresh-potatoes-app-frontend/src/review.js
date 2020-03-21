@@ -14,11 +14,5 @@ class Review {
       return `<li>${this.comment}</li>`
     }
 
-  //   renderUl(){
-  //   const ul = document.getElementById(`movie-${this.movie_id}`)
-  //   return ul.appendChild(this.review)
-
-  // }
-
 }
 
