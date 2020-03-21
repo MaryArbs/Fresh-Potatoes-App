@@ -20,14 +20,14 @@ class Movies {
     const imgValue = this.imageLink.value
     this.adapter.postMovie(titleValue, imgValue).then(movie => { 
       let sanitized = {...movie.data.attributes, id: movie.id}
-      // sanitized.sort((a,b) => a.id, b.id)
-      // debugger
-      this.movies.push(new Movie(sanitized)) //created new movie in movies_controller, and then the controller renders movie to JSON
+      let newMovie = new Movie(sanitized)
+      this.movies.push(newMovie) //created new movie in movies_controller, and then the controller renders movie to JSON
       this.newMovieTitle.value = ''
       this.imageLink.value = ''
     })
-  .then(() => {
-    this.fullRender()
+  .then((movieObj) => {
+    const li = document.getElementById(`${movieObj.id}`)
+    li.innerHTML += movieObj.renderLi()
    })
   }
 
