@@ -9,7 +9,7 @@ Movie.create([{title: 'Onward', image: "https://m.media-amazon.com/images/M/MV5B
 
 
 
-Review.create([{comment: "I have not seen this movie, but I want to.", movie_id: "268"}, {comment: "This was the best movie!", movie_id: "269"}, {comment: "Surprisingly funny.", movie_id: "270"}, {comment: "Saw this movie with my dad. I loved the adventure!", movie_id: "271"}])
+Review.create([{comment: "I have not seen this movie, but I want to.", movie_id: "296"}, {comment: "This was the best movie!", movie_id: "297"}, {comment: "Surprisingly funny.", movie_id: "298"}, {comment: "Saw this movie with my dad. I loved the adventure!", movie_id: "299"}])
 
 
 

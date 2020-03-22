@@ -7,15 +7,19 @@ class Reviews {
   }
 
   bindingsAndEventListeners = () => {
-  this.newReviewForm = Array.from(document.getElementsByClassName('new-review-form'))
-  this.newReviewForm.forEach(el => {
-   el.addEventListener('submit', this.addReview)
-   })
+  // this.newReviewForm = Array.from(document.getElementsByClassName('new-review-form'))
+  // this.newReviewForm.forEach(el => {
+  //  el.addEventListener('submit', this.addReview)
+  // })
+  const moviesContainer = document.querySelector('#movies-container')
+  moviesContainer.addEventListener('submit', (e) => {
+   e.preventDefault()
+   this.addReview(e)
+  })
   }
 
  
   addReview = (event) => {
-   event.preventDefault()
    this.newReviewInput = event.target.querySelector(`#new-review`)
    let input = this.newReviewInput.value
    let movieId = event.target.dataset.movie
@@ -28,7 +32,6 @@ class Reviews {
   })
   .then((reviewObj) => {
     const ul = document.getElementById(`movie-${reviewObj.movie_id}`)
-    console.log(ul)
     ul.innerHTML += reviewObj.renderLi()
   })
   }
@@ -42,6 +45,4 @@ class Reviews {
     })
   })
   }
-  
-
 }

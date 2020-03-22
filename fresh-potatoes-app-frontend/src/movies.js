@@ -11,10 +11,10 @@ class Movies {
     this.newMovieTitle = document.getElementById('new-movie-title') //want to get value of what will be submited
     this.imageLink = document.getElementById('image-link') //need this value 
     this.movieForm = document.getElementById('new-movie-form')
-    this.movieForm.addEventListener('submit', this.addMovie.bind(this))//anytime you make form, make sure you bind 'this' to movies. if you do not do this, when you use "this" in makeForm, "this" will refere to the form, and return undefined value. You want to value, of the Notes. 
+    this.movieForm.addEventListener('submit', this.addMovie)//anytime you make form, make sure you bind 'this' to movies. if you do not do this, when you use "this" in makeForm, "this" will refere to the form, and return undefined value. You want to value, of the Notes. 
   } 
-
-  addMovie(event){
+ 
+  addMovie = (event) => {
     event.preventDefault() //pass in event object. when you submit form the default behavior is refresh page, which we do not want
     const titleValue = this.newMovieTitle.value //pass in event object. need to take value to create post request using adapter
     const imgValue = this.imageLink.value
