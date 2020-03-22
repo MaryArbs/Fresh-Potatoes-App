@@ -1,8 +1,8 @@
 class Reviews {
 
   static all = []
-  constructor(){
   
+  constructor(){
    this.adapter = new ReviewsAdapter()
   }
 
@@ -18,8 +18,7 @@ class Reviews {
   })
   }
 
- 
-  addReview = (event) => {
+ addReview = (event) => {
    this.newReviewInput = event.target.querySelector(`#new-review`)
    let input = this.newReviewInput.value
    let movieId = event.target.dataset.movie

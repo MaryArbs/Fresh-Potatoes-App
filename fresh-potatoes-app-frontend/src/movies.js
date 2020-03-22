@@ -3,7 +3,6 @@ class Movies {
    constructor(){
     this.movies = []
     this.adapter = new MoviesAdapter()
-
   }
 
   bindingsAndEventListeners = () => {
@@ -45,7 +44,7 @@ class Movies {
   })
   .then(this.bindingsAndEventListeners)
   .then(() => this.fullRender())
-}
+  }
   
   fullRender = () => {
    this.moviesContainer.innerHTML = this.movies.map(movie => movie.renderLi()).join("")
