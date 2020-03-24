@@ -20,6 +20,6 @@ class MoviesAdapter{
           "Content-Type": "application/json",
         },
         body: JSON.stringify({movie})// creating new movie object {movie: movie} - property and value 
-      }).then(res => res.json()) //this sends parsed json object to addMovie(event) in movie.js
+      }) .then(res => res.json())//this sends parsed json object to addMovie(event) in movie.js 
     }
   }

@@ -10,7 +10,9 @@ class Movies {
     this.newMovieTitle = document.getElementById('new-movie-title') //want to get value of what will be submited
     this.imageLink = document.getElementById('image-link') //need this value 
     this.movieForm = document.getElementById('new-movie-form')
-    this.movieForm.addEventListener('submit', this.addMovie)//anytime you make form, make sure you bind 'this' to movies. if you do not do this, when you use "this" in makeForm, "this" will refere to the form, and return undefined value. You want to value, of the Notes. 
+    this.movieForm.addEventListener('submit', this.addMovie)
+    this.sortMoviesBtn = document.getElementById('sort-movies')
+    this.sortMoviesBtn.addEventListener('click', this.sortMovies)
   } 
  
   addMovie = (event) => {
@@ -30,6 +32,23 @@ class Movies {
     ol.innerHTML += movieObj.renderLi()
    })
   }
+
+  // sort movie button for project review
+  sortMovies = (event) => {
+    console.log("Button clicked!")
+    const sortedMovies = this.movies.sort(function(a,b){
+       if (a.title < b.title){
+        return -1;
+      }
+      if (a.title > b.title){
+        return 1;
+      }
+        return 0;
+      })
+     this.moviesContainer.innerHTML = sortedMovies.map(movie => movie.renderLi()).join("")
+     console.log(sortedMovies)
+  }
+  
 
 
   fetchAndLoadMovies = () => {
