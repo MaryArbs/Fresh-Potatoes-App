@@ -1,8 +1,8 @@
 class App {
-    constructor() {
-    
+  constructor() {
+
     this.reviews = new Reviews()
     this.movies = new Movies()
-    
+
   }
 }
